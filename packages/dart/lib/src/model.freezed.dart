@@ -1,5 +1,6 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format width=80
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -70,7 +71,6 @@ as String,
 }
 
 }
-
 
 
 /// @nodoc
@@ -238,7 +238,6 @@ $GetPaymentRequestCopyWith(GetPaymentRequest _, $Res Function(GetPaymentRequest)
 }
 
 
-
 /// @nodoc
 
 
@@ -399,7 +398,6 @@ String toString() {
 class $ListPaymentDetailsCopyWith<$Res>  {
 $ListPaymentDetailsCopyWith(ListPaymentDetails _, $Res Function(ListPaymentDetails) __);
 }
-
 
 
 /// @nodoc
@@ -567,7 +565,6 @@ String toString() {
 class $LnUrlPayResultCopyWith<$Res>  {
 $LnUrlPayResultCopyWith(LnUrlPayResult _, $Res Function(LnUrlPayResult) __);
 }
-
 
 
 /// @nodoc
@@ -796,7 +793,6 @@ String toString() {
 class $PayAmountCopyWith<$Res>  {
 $PayAmountCopyWith(PayAmount _, $Res Function(PayAmount) __);
 }
-
 
 
 /// @nodoc
@@ -1034,7 +1030,6 @@ as String,
 }
 
 
-
 /// @nodoc
 
 
@@ -1230,7 +1225,7 @@ as String?,
 
 
 class PaymentDetails_Bitcoin extends PaymentDetails {
-  const PaymentDetails_Bitcoin({required this.swapId, required this.bitcoinAddress, required this.description, required this.autoAcceptedFees, this.liquidExpirationBlockheight, this.bitcoinExpirationBlockheight, this.lockupTxId, this.claimTxId, this.refundTxId, this.refundTxAmountSat}): super._();
+  const PaymentDetails_Bitcoin({required this.swapId, required this.bitcoinAddress, required this.description, required this.autoAcceptedFees, required this.liquidExpirationBlockheight, required this.bitcoinExpirationBlockheight, this.lockupTxId, this.claimTxId, this.refundTxId, this.refundTxAmountSat}): super._();
   
 
  final  String swapId;
@@ -1243,11 +1238,9 @@ class PaymentDetails_Bitcoin extends PaymentDetails {
 /// estimate, plus the `onchain_fee_rate_leeway_sat_per_vbyte` set in the [Config], if any.
  final  bool autoAcceptedFees;
 /// The height of the Liquid block at which the swap will no longer be valid
-/// It should always be populated in case of an outgoing chain swap
- final  int? liquidExpirationBlockheight;
+ final  int liquidExpirationBlockheight;
 /// The height of the Bitcoin block at which the swap will no longer be valid
-/// It should always be populated in case of an incoming chain swap
- final  int? bitcoinExpirationBlockheight;
+ final  int bitcoinExpirationBlockheight;
 /// The lockup tx id that initiates the swap
  final  String? lockupTxId;
 /// The claim tx id that claims the server lockup tx
@@ -1287,7 +1280,7 @@ abstract mixin class $PaymentDetails_BitcoinCopyWith<$Res> implements $PaymentDe
   factory $PaymentDetails_BitcoinCopyWith(PaymentDetails_Bitcoin value, $Res Function(PaymentDetails_Bitcoin) _then) = _$PaymentDetails_BitcoinCopyWithImpl;
 @override @useResult
 $Res call({
- String swapId, String bitcoinAddress, String description, bool autoAcceptedFees, int? liquidExpirationBlockheight, int? bitcoinExpirationBlockheight, String? lockupTxId, String? claimTxId, String? refundTxId, BigInt? refundTxAmountSat
+ String swapId, String bitcoinAddress, String description, bool autoAcceptedFees, int liquidExpirationBlockheight, int bitcoinExpirationBlockheight, String? lockupTxId, String? claimTxId, String? refundTxId, BigInt? refundTxAmountSat
 });
 
 
@@ -1304,15 +1297,15 @@ class _$PaymentDetails_BitcoinCopyWithImpl<$Res>
 
 /// Create a copy of PaymentDetails
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? swapId = null,Object? bitcoinAddress = null,Object? description = null,Object? autoAcceptedFees = null,Object? liquidExpirationBlockheight = freezed,Object? bitcoinExpirationBlockheight = freezed,Object? lockupTxId = freezed,Object? claimTxId = freezed,Object? refundTxId = freezed,Object? refundTxAmountSat = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? swapId = null,Object? bitcoinAddress = null,Object? description = null,Object? autoAcceptedFees = null,Object? liquidExpirationBlockheight = null,Object? bitcoinExpirationBlockheight = null,Object? lockupTxId = freezed,Object? claimTxId = freezed,Object? refundTxId = freezed,Object? refundTxAmountSat = freezed,}) {
   return _then(PaymentDetails_Bitcoin(
 swapId: null == swapId ? _self.swapId : swapId // ignore: cast_nullable_to_non_nullable
 as String,bitcoinAddress: null == bitcoinAddress ? _self.bitcoinAddress : bitcoinAddress // ignore: cast_nullable_to_non_nullable
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,autoAcceptedFees: null == autoAcceptedFees ? _self.autoAcceptedFees : autoAcceptedFees // ignore: cast_nullable_to_non_nullable
-as bool,liquidExpirationBlockheight: freezed == liquidExpirationBlockheight ? _self.liquidExpirationBlockheight : liquidExpirationBlockheight // ignore: cast_nullable_to_non_nullable
-as int?,bitcoinExpirationBlockheight: freezed == bitcoinExpirationBlockheight ? _self.bitcoinExpirationBlockheight : bitcoinExpirationBlockheight // ignore: cast_nullable_to_non_nullable
-as int?,lockupTxId: freezed == lockupTxId ? _self.lockupTxId : lockupTxId // ignore: cast_nullable_to_non_nullable
+as bool,liquidExpirationBlockheight: null == liquidExpirationBlockheight ? _self.liquidExpirationBlockheight : liquidExpirationBlockheight // ignore: cast_nullable_to_non_nullable
+as int,bitcoinExpirationBlockheight: null == bitcoinExpirationBlockheight ? _self.bitcoinExpirationBlockheight : bitcoinExpirationBlockheight // ignore: cast_nullable_to_non_nullable
+as int,lockupTxId: freezed == lockupTxId ? _self.lockupTxId : lockupTxId // ignore: cast_nullable_to_non_nullable
 as String?,claimTxId: freezed == claimTxId ? _self.claimTxId : claimTxId // ignore: cast_nullable_to_non_nullable
 as String?,refundTxId: freezed == refundTxId ? _self.refundTxId : refundTxId // ignore: cast_nullable_to_non_nullable
 as String?,refundTxAmountSat: freezed == refundTxAmountSat ? _self.refundTxAmountSat : refundTxAmountSat // ignore: cast_nullable_to_non_nullable
@@ -1351,7 +1344,6 @@ String toString() {
 class $ReceiveAmountCopyWith<$Res>  {
 $ReceiveAmountCopyWith(ReceiveAmount _, $Res Function(ReceiveAmount) __);
 }
-
 
 
 /// @nodoc
@@ -1516,7 +1508,6 @@ String toString() {
 class $SdkEventCopyWith<$Res>  {
 $SdkEventCopyWith(SdkEvent _, $Res Function(SdkEvent) __);
 }
-
 
 
 /// @nodoc
@@ -2206,7 +2197,6 @@ as String?,
 }
 
 }
-
 
 
 /// @nodoc

@@ -55,7 +55,7 @@ jobs:
 
       - name: Precompile (macOS & Windows)
         if: matrix.os == 'macOS-latest' || matrix.os == 'windows-latest'
-        run: dart run build_tool precompile-binaries -v --manifest-dir=../../../../lib/core --repository=breez/breez-sdk-liquid
+        run: dart run build_tool precompile-binaries -v --manifest-dir=../../../../lib/core --repository=erdemyerebasmaz/breez-sdk-liquid-dart
         working-directory: packages/dart/cargokit/build_tool
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -63,7 +63,7 @@ jobs:
 
       - name: Precompile (with Android)
         if: matrix.os == 'ubuntu-latest'
-        run: dart run build_tool precompile-binaries -v --manifest-dir=../../../../lib/core --repository=breez/breez-sdk-liquid --android-sdk-location=$ANDROID_HOME --android-ndk-version=23.2.8568313 --android-min-sdk-version=24
+        run: dart run build_tool precompile-binaries -v --manifest-dir=../../../../lib/core --repository=erdemyerebasmaz/breez-sdk-liquid-dart --android-sdk-location=$ANDROID_HOME --android-ndk-version=23.2.8568313 --android-min-sdk-version=24
         working-directory: packages/dart/cargokit/build_tool
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

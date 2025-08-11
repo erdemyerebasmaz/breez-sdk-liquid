@@ -91,7 +91,7 @@ class PrecompileBinaries {
     );
 
     final buildEnvironment = BuildEnvironment(
-      configuration: BuildConfiguration.debug,
+      configuration: BuildConfiguration.release,
       crateOptions: crateOptions,
       targetTempDir: tempDir.path,
       manifestDir: manifestDir,

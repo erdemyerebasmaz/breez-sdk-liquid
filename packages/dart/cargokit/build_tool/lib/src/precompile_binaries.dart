@@ -29,7 +29,7 @@ class PrecompileBinaries {
     this.androidNdkVersion,
     this.androidMinSdkVersion,
     this.tempDir,
-    this.skipRelease = true,
+    this.skipRelease = false,
   });
 
   final PrivateKey privateKey;

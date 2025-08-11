@@ -1,0 +1,22 @@
+PODS:
+  - breez_sdk_liquid (0.0.1):
+    - FlutterMacOS
+  - FlutterMacOS (1.0.0)
+
+DEPENDENCIES:
+  - breez_sdk_liquid (from `Flutter/ephemeral/.symlinks/plugins/breez_sdk_liquid/macos`)
+  - FlutterMacOS (from `Flutter/ephemeral`)
+
+EXTERNAL SOURCES:
+  breez_sdk_liquid:
+    :path: Flutter/ephemeral/.symlinks/plugins/breez_sdk_liquid/macos
+  FlutterMacOS:
+    :path: Flutter/ephemeral
+
+SPEC CHECKSUMS:
+  breez_sdk_liquid: 8fb9abc2ce7411c21c9e144b58948d53572d283f
+  FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
+
+PODFILE CHECKSUM: 7eb978b976557c8c1cd717d8185ec483fd090a82
+
+COCOAPODS: 1.16.2

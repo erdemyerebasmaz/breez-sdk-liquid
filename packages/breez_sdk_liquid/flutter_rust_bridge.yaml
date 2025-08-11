@@ -1,0 +1,11 @@
+rust_input: crate::bindings
+rust_root: ../../lib/core
+dart_entrypoint_class_name: BreezLiquid
+dart_output: lib/generated
+c_output: ios/Classes/frb_generated.h
+duplicated_c_output: [macos/Classes/frb_generated.h]
+web: false
+full_dep: true
+add_mod_to_lib: false
+dart_format_line_length: 110
+enable_lifetime: true

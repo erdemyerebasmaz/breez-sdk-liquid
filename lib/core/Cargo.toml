@@ -5,7 +5,7 @@ version.workspace = true
 
 [lib]
 name = "breez_sdk_liquid"
-crate-type = ["lib", "cdylib", "staticlib"]
+crate-type = ["staticlib", "cdylib"]
 
 [features]
 default = ["frb"]

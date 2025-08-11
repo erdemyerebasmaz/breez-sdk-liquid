@@ -58,7 +58,7 @@ jobs:
         run: dart run build_tool precompile-binaries -v --manifest-dir=../../../../lib/core --repository=erdemyerebasmaz/breez-sdk-liquid-dart
         working-directory: packages/dart/cargokit/build_tool
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_GITHUB_TOKEN }}
           PRIVATE_KEY: ${{ secrets.RELEASE_PRIVATE_KEY }}
 
       - name: Precompile (with Android)
@@ -66,5 +66,5 @@ jobs:
         run: dart run build_tool precompile-binaries -v --manifest-dir=../../../../lib/core --repository=erdemyerebasmaz/breez-sdk-liquid-dart --android-sdk-location=$ANDROID_HOME --android-ndk-version=23.2.8568313 --android-min-sdk-version=24
         working-directory: packages/dart/cargokit/build_tool
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_GITHUB_TOKEN }}
           PRIVATE_KEY: ${{ secrets.RELEASE_PRIVATE_KEY }}

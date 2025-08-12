@@ -67,19 +67,20 @@ class ArtifactProvider {
     for (final target in targets) {
       final builder = RustBuilder(target: target, environment: environment);
       builder.prepare(rustup);
-      _log.info('Building ${environment.crateInfo.packageName} for $target');
+      _log.info(
+          'Building ${environment.crateInfo.packageName.replaceAll("-", "_")} for $target');
       final targetDir = await builder.build();
       // For local build accept both static and dynamic libraries.
       final artifactNames = <String>{
         ...getArtifactNames(
           target: target,
-          libraryName: environment.crateInfo.packageName,
+          libraryName: environment.crateInfo.packageName.replaceAll("-", "_"),
           aritifactType: AritifactType.dylib,
           remote: false,
         ),
         ...getArtifactNames(
           target: target,
-          libraryName: environment.crateInfo.packageName,
+          libraryName: environment.crateInfo.packageName.replaceAll("-", "_"),
           aritifactType: AritifactType.staticlib,
           remote: false,
         )
@@ -122,7 +123,7 @@ class ArtifactProvider {
     for (final target in targets) {
       final requiredArtifacts = getArtifactNames(
         target: target,
-        libraryName: environment.crateInfo.packageName,
+        libraryName: environment.crateInfo.packageName.replaceAll("-", "_"),
         remote: true,
       );
       final artifactsForTarget = <Artifact>[];

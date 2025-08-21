@@ -1,10 +1,12 @@
+version = '0.10.3' # generated; do not edit
+
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
 # Run `pod lib lint breez_sdk_liquid.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.version          = '0.0.1'
   s.name              = 'breez_sdk_liquid'
+  s.version           = version
   s.summary           = 'iOS/macOS Flutter bindings for Breez Liquid SDK'
   s.description       = 'iOS/macOS Flutter bindings for Breez Liquid SDK with Notification Service Extension support.'
   s.homepage          = 'https://breez.technology'

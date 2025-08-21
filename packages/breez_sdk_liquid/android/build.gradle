@@ -12,6 +12,7 @@ buildscript {
     dependencies {
         // The Android Gradle Plugin knows how to build native code with the NDK.
         classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.21"
     }
 }
 
@@ -23,6 +24,7 @@ rootProject.allprojects {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     if (project.android.hasProperty("namespace")) {
@@ -39,10 +41,36 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 24  // Raised for NSE support
     }
+    
+    sourceSets {
+        main {
+            java.srcDirs = [
+                'src/main/java',
+                'src/main/kotlin',
+                'src/main/kotlin/breez_sdk_liquid_notification'
+            ]
+        }
+    }
+}
+
+dependencies {
+    // NSE dependencies
+    implementation 'net.java.dev.jna:jna:5.14.0@aar'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7"
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    /* JSON serialization */
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3'
+    /* Kotlin bindgen dependencies */
+    implementation 'org.jetbrains.kotlinx:atomicfu:0.23.1'
+    implementation 'com.squareup.okio:okio:3.6.0'
 }
 
 apply from: "../cargokit/gradle/plugin.gradle"

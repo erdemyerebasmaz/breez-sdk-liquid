@@ -1,3 +1,5 @@
-## 0.0.1
+Breez Liquid SDK release notes can be found at [breez-sdk-liquid/releases](https://github.com/breez/breez-sdk-liquid/releases/)
 
-* TODO: Describe initial release.
+## 0.10.3
+
+* Initial release

@@ -31,6 +31,12 @@ dependencies:
   flutter:
     sdk: flutter
 
+  bdk_flutter:
+    git:
+      url: https://github.com/LtbLightning/bdk-flutter.git
+  lwk:
+    git:
+      url: https://github.com/SatoshiPortal/lwk-dart.git
   breez_sdk_liquid:
     # When depending on this package from a real application you should use:
     #   breez_sdk_liquid: ^x.y.z

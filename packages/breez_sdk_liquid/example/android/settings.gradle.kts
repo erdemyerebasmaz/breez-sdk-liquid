@@ -10,6 +10,9 @@ pluginManagement {
     includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
 
     repositories {
+        maven {
+            url = uri("https://mvn.breez.technology/releases")
+        }
         google()
         mavenCentral()
         gradlePluginPortal()

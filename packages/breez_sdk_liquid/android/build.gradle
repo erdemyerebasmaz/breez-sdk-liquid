@@ -1,7 +1,7 @@
 // The Android Gradle Plugin builds the native code with the Android NDK.
 
-group 'com.flutter_rust_bridge.breez_sdk_liquid'
 version '1.0'
+group 'technology.breez.breez_sdk_liquid'
 
 buildscript {
     repositories {
@@ -28,7 +28,7 @@ apply plugin: 'kotlin-android'
 
 android {
     if (project.android.hasProperty("namespace")) {
-        namespace 'com.flutter_rust_bridge.breez_sdk_liquid'
+        namespace 'technology.breez.breez_sdk_liquid'
     }
 
     // Bumping the plugin compileSdkVersion requires all clients of this plugin

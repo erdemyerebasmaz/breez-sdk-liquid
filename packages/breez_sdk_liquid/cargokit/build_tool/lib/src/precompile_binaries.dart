@@ -76,9 +76,8 @@ class PrecompileBinaries {
       hash: hash,
     );
 
-    final tempDir = this.tempDir != null
-        ? Directory(this.tempDir!)
-        : Directory.systemTemp.createTempSync('precompiled_');
+    final tempDir =
+        this.tempDir != null ? Directory(this.tempDir!) : Directory.systemTemp.createTempSync('precompiled_');
 
     tempDir.createSync(recursive: true);
 
@@ -103,9 +102,11 @@ class PrecompileBinaries {
     for (final target in targets) {
       final artifactNames = getArtifactNames(
         target: target,
-        libraryName: crateInfo.packageName,
+        libraryName: crateInfo.libraryName,
         remote: true,
       );
+
+      _log.config('Looking for artifacts: $artifactNames');
 
       if (artifactNames.every((name) {
         final fileName = PrecompileBinaries.fileName(target, name);
@@ -117,14 +118,20 @@ class PrecompileBinaries {
 
       _log.info('Building for $target');
 
-      final builder =
-          RustBuilder(target: target, environment: buildEnvironment);
+      final builder = RustBuilder(target: target, environment: buildEnvironment);
       builder.prepare(rustup);
       final res = await builder.build();
+
+      _log.config('Build result directory: $res');
+      _log.config('Files in build directory: ${Directory(res).listSync()}');
 
       final assets = <CreateReleaseAsset>[];
       for (final name in artifactNames) {
         final file = File(path.join(res, name));
+        _log.config('Looking for artifact: $name');
+        _log.config('Full path: ${file.path}');
+        _log.config('File exists: ${file.existsSync()}');
+        _log.config('Directory contents: ${Directory(res).listSync().map((f) => path.basename(f.path))}');
         if (!file.existsSync()) {
           throw Exception('Missing artifact: ${file.path}');
         }
@@ -161,8 +168,7 @@ class PrecompileBinaries {
               rethrow;
             }
             ++retryCount;
-            _log.shout(
-                'Upload failed (attempt $retryCount, will retry): ${e.toString()}');
+            _log.shout('Upload failed (attempt $retryCount, will retry): ${e.toString()}');
             await Future.delayed(Duration(seconds: 2));
           }
         }

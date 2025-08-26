@@ -23,9 +23,12 @@ class ManifestException {
 }
 
 class CrateInfo {
-  CrateInfo({required this.packageName});
+  CrateInfo({required this.packageName, this.libName});
 
   final String packageName;
+  final String? libName;
+
+  String get libraryName => libName ?? packageName.replaceAll('-', '_');
 
   static CrateInfo parseManifest(String manifest, {final String? fileName}) {
     final toml = TomlDocument.parse(manifest);
@@ -37,7 +40,9 @@ class CrateInfo {
     if (name == null) {
       throw ManifestException('Missing package name', fileName: fileName);
     }
-    return CrateInfo(packageName: name);
+    final lib = toml.toMap()['lib'];
+    final libName = lib?['name'];
+    return CrateInfo(packageName: name, libName: libName);
   }
 
   static CrateInfo load(String manifestDir) {
